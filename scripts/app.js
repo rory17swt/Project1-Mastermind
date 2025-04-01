@@ -23,10 +23,10 @@
     - The 'submit' button can only be pressed once all 4 squares(holes) have been filled with a colour
 */
 
-/* Afetr sumbmitting, depending on the player choice of colours, they will see a white or black peg
-    - From the result comparison I will display no pegs, or white or blakc pegs
+/* Afetr sumbmitting, depending on the player choice of colours, they will see a white or red peg
+    - From the result comparison I will display no pegs, or white or Red pegs
     - White: One or more colours match the computers choice
-    - Black: one or more colours match the compiters choice and the position
+    - Red: one or more colours match the computers choice and the position
 
 
 /* Then repeat the process (max of 10 guesses) on the next row until you guess the colour combination or loose
@@ -35,20 +35,50 @@
     - if "play again" is pressed the computer will begin the randomization process and the game will start again
 */
 
+const boardButtons = document.querySelectorAll('.board-button')
+const currentColorBox = document.querySelector('#current-color')
+const colorPanel = document.querySelectorAll('.color-button')
 
-// !! Elements::
-
-// start game button
-// submit button
-// individual colour buttons
-// button for each panel on board grid
-
-
-
-// !! Executions::
+let currentColor = ''
+let currentBoardButtons = ['b37', 'b38', 'b39', 'b40']
+let currentPegs = ['p37', 'p38', 'p39', 'p40']
+let currentRow = 10
+const allColors = ['blue', 'red', 'orange', 'yellow', 'pink', 'green']
 
 
+// * Computer Code
 
-// !! Events::
+const computerColorCode = [
+    allColors[Math.floor(Math.random() * 6)],
+    allColors[Math.floor(Math.random() * 6)],
+    allColors[Math.floor(Math.random() * 6)],
+    allColors[Math.floor(Math.random() * 6)],
+]
 
-// 
+
+// * Changing Colour Box  // bear notes
+
+function ChangeColor(event) {
+
+    currentColor = event.target.id
+
+    currentColorBox.classList.remove('blue', 'red', 'orange', 'yellow', 'pink', 'green')
+    currentColorBox.classList.add(currentColor)
+}
+
+colorPanel.forEach(btn => {
+    btn.addEventListener('click', ChangeColor)
+})
+
+// * Changing Board Button Colour
+
+function applyButtonColor(event) {
+    const button = event.target
+    button.classList.add(currentColor)
+}
+
+boardButtons.forEach(button => {
+    button.addEventListener('click', applyButtonColor)
+})
+
+

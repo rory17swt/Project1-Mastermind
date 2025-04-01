@@ -4,14 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="'scripts/app.js"></script>
-    <link rel="stylesheet" href="styles/main.css">
-    </link>
     <title>Project 1</title>
+    <link rel="stylesheet" href="styles/main.css"></link>
+    <script defer src="scripts/app.js"></script>
 </head>
 
 <body>
+    <h1 class="text" id="title">Mastermind</h1>
+    <main class="content">
+        <div class="main-board">
+            <button class="board-button" class="cell10" id="b1"></button>
+            <button class="board-button" class="cell10" id="b2"></button>
+            <button class="board-button" class="cell10" id="b3"></button>
+            <button class="board-button" class="cell10" id="b4"></button>
 
+            <button class="board-button" class="cell9" id="b5"></button>
+            <button class="board-button" class="cell9" id="b6"></button>
+            <button class="board-button" class="cell9" id="b7"></button>
+            <button class="board-button" class="cell9" id="b8"></button>
+
+            <button class="board-button" class="cell8" id="b9"></button>
+            <button class="board-button" class="cell8" id="b10"></button>
+            <button class="board-button" class="cell8" id="b11"></button>
+            <button class="board-button" class="cell8" id="b12"></button>
+
+            <button class="board-button" class="cell7" id="b13"></button>
+            <button class="board-button" class="cell7" id="b14"></button>
+            <button class="board-button" class="cell7" id="b15"></button>
+            <button class="board-button" class="cell7" id="b16"></button>
+
+            <button class="board-button" class="cell6" id="b17"></button>
+            <button class="board-button" class="cell6" id="b18"></button>
+            <button class="board-button" class="cell6" id="b19"></button>
+            <button class="board-button" class="cell6" id="b20"></button>
+
+            <button class="board-button" class="cell5" id="b21"></button>
+            <button class="board-button" class="cell5" id=b22></button>
+            <button class="board-button" class="cell5" id="b23"></button>
+            <button class="board-button" class="cell5" id="b24"></button>
+
+            <button class="board-button" class="cell4" id="b25"></button>
+            <button class="board-button" class="cell4" id="b26"></button>
+            <button class="board-button" class="cell4" id="b27"></button>
+            <button class="board-button" class="cell4" id="b28"></button>
+
+            <button class="board-button" class="cell3" id="b29"></button>
+            <button class="board-button" class="cell3" id="b30"></button>
+            <button class="board-button" class="cell3" id="b31"></button>
+            <button class="board-button" class="cell3" id="b32"></button>
+
+            <button class="board-button" class="cell2" id="b33"></button>
+            <button class="board-button" class="cell2" id="b34"></button>
+            <button class="board-button" class="cell2" id="b35"></button>
+            <button class="board-button" class="cell2" id="b36"></button>
+
+            <button class="board-button" class="cell1" id="b37"></button>
+            <button class="board-button" class="cell1" id="b38"></button>
+            <button class="board-button" class="cell1" id="b39"></button>
+            <button class="board-button" class="cell1" id="b40"></button>
+        </div>
+        <div class="peg-box">
+            <div class="pegs" id="p1"></div>
+            <div class="pegs" id="p2"></div>
+            <div class="pegs" id="p3"></div>
+            <div class="pegs" id="p4"></div>
+
+            <div class="pegs" id="p5"></div>
+            <div class="pegs" id="p6"></div>
+            <div class="pegs" id="p7"></div>
+            <div class="pegs" id="p8"></div>
+
+            <div class="pegs" id="p9"></div>
+            <div class="pegs" id="p10"></div>
+            <div class="pegs" id="p11"></div>
+            <div class="pegs" id="p12"></div>
+
+            <div class="pegs" id="p13"></div>
+            <div class="pegs" id="p14"></div>
+            <div class="pegs" id="p15"></div>
+            <div class="pegs" id="p16"></div>
+
+            <div class="pegs" id="p17"></div>
+            <div class="pegs" id="p18"></div>
+            <div class="pegs" id="p19"></div>
+            <div class="pegs" id="p20"></div>
+
+            <div class="pegs" id="p21"></div>
+            <div class="pegs" id="p22"></div>
+            <div class="pegs" id="p23"></div>
+            <div class="pegs" id="p24"></div>
+
+            <div class="pegs" id="p25"></div>
+            <div class="pegs" id="p26"></div>
+            <div class="pegs" id="p27"></div>
+            <div class="pegs" id="p28"></div>
+
+            <div class="pegs" id="p29"></div>
+            <div class="pegs" id="p30"></div>
+            <div class="pegs" id="p31"></div>
+            <div class="pegs" id="p32"></div>
+
+            <div class="pegs" id="p33"></div>
+            <div class="pegs" id="p34"></div>
+            <div class="pegs" id="p35"></div>
+            <div class="pegs" id="p36"></div>
+
+            <div class="pegs" id="p37"></div>
+            <div class="pegs" id="p38"></div>
+            <div class="pegs" id="p39"></div>
+            <div class="pegs" id="p40"></div>
+        </div>
+    </div>
+    <div>
+        <div class="all-secrets">
+            <div class="code">
+                <div class="secret-color" id="secret-color1"></div>
+                <div class="secret-color" id="secret-color2"></div>
+                <div class="secret-color" id="secret-color3"></div>
+                <div class="secret-color" id="secret-color4"></div>
+            </div>
+            <div class="color-board">
+                <button class="color-button " id="blue"></button>
+                <button class="color-button " id="red"></button>
+                <button class="color-button " id="orange"></button>
+                <button class="color-button " id="yellow"></button>
+                <button class="color-button " id="pink"></button>
+                <button class="color-button " id="green"></button>
+            </div>
+            <div id="current-color"></div>
+            <div class="text" id="submit">Submit</div>
+        </div>
+    </main>
 </body>
 
 </html>

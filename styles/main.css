@@ -1,0 +1,182 @@
+
+#title {
+    margin-left: 90px;
+    font-size: 3rem;
+}
+
+.main-board {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(10, 50px);
+    background-color: rgb(172, 79, 25);
+    border: 5px solid black;
+    margin-left: 10px;
+    height: 805px;
+    width: 300px;
+    position: absolute;
+}
+
+.board-button {
+    background-color: white;
+    opacity: 0.7;
+    border-radius: 50%;
+}
+.board-button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.peg-box {
+    display: grid;
+    grid-template-columns: repeat(2, 10px);
+    grid-template-rows: repeat(2, 10px);
+    gap: 20px;
+    height: 795px;
+    width: 60px;
+    border: 5px solid black;
+    margin-left: 310px;
+    background-color: rgb(172, 79, 25);
+    position: absolute;
+}
+
+.pegs {
+    background-color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 20px;
+    margin-left: 2px;
+}
+
+.color-board {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(3, 100px);
+    width: 200px;
+    height: 300px;
+    border: 5px solid black;
+    margin-left: 450px;
+    margin-top: 10px;
+}
+
+.color-button {
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+    height: 95px;
+    width: 95px;
+}
+
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.orange {
+    background-color: orange;
+}
+.yellow {
+    background-color: yellow;
+}
+.pink {
+    background-color: pink;
+}
+.green {
+    background-color: green;
+}
+
+
+#blue {
+    background-color: blue;
+    opacity: 0.8;
+}
+#blue:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#red {
+    background-color: red;
+    opacity: 0.8;
+}
+#red:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#orange {
+    background-color: orange;
+    opacity: 0.8;
+}
+#orange:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#yellow {
+    background-color: yellow;
+    opacity: 0.8;
+}
+#yellow:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#pink {
+    background-color: pink;
+    opacity: 0.8;
+}
+#pink:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+#green {
+    background-color: green;
+    opacity: 0.8;
+}
+#green:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+#current-color {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(1, 50px);
+    width: 200px;
+    height: 50px;
+    border: 5px solid black;
+    margin-left: 450px;
+    margin-top: 10px;
+}
+
+.secret-color {
+    background-color: black;
+}
+
+#submit {
+    width: 200px;
+    height: 50px;
+    border: 5px solid black;
+    margin-left: 450px;
+    margin-top: 10px;
+    background-color: red;
+    opacity: .7;
+    text-align: center;
+    color: white;
+    font-size: 2.5rem;
+}
+
+#submit:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.other {
+    margin-left: 100px;
+}
