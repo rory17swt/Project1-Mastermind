@@ -35,13 +35,14 @@
     - if "play again" is pressed the computer will begin the randomization process and the game will start again
 */
 
+const submit = document.querySelector('#submit')
 const boardButtons = document.querySelectorAll('.board-button')
 const currentColorBox = document.querySelector('#current-color')
 const colorPanel = document.querySelectorAll('.color-button')
 
+let hasWon = false
 let currentColor = ''
-let currentBoardButtons = ['b37', 'b38', 'b39', 'b40']
-let currentPegs = ['p37', 'p38', 'p39', 'p40']
+let currentPegs = []
 let currentRow = 10
 const allColors = ['blue', 'red', 'orange', 'yellow', 'pink', 'green']
 
@@ -56,7 +57,7 @@ const computerColorCode = [
 ]
 
 
-// * Changing Colour Box  // bear notes
+// * Changing selected colour Box  // bear notes
 
 function ChangeColor(event) {
 
@@ -70,15 +71,26 @@ colorPanel.forEach(btn => {
     btn.addEventListener('click', ChangeColor)
 })
 
-// * Changing Board Button Colour
+// * Checking if I can apply Colour to row 
 
-function applyButtonColor(event) {
-    const button = event.target
-    button.classList.add(currentColor)
-}
 
-boardButtons.forEach(button => {
-    button.addEventListener('click', applyButtonColor)
+boardButtons.forEach(btn => {
+    btn.addEventListener('click', function applyButtonColor(event) {
+
+        if (Number(btn.dataset.row) === currentRow) {
+            const buttonColor = event.target
+            buttonColor.classList.add(currentColor)
+        }
+    })
 })
 
 
+
+// * Row change, peg display and code comparrison
+
+
+function ChangeRow() {
+    currentRow -= 1
+}
+
+submit.addEventListener('click', ChangeRow)
