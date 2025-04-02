@@ -35,15 +35,22 @@
     - if "play again" is pressed the computer will begin the randomization process and the game will start again
 */
 
+
 const submit = document.querySelector('#submit')
 const boardButtons = document.querySelectorAll('.board-button')
 const currentColorBox = document.querySelector('#current-color')
 const colorPanel = document.querySelectorAll('.color-button')
 
-let hasWon = false
+let currentRowColors = [
+    '',
+    '',
+    '',
+    '',
+]
+
 let currentColor = ''
-let currentPegs = []
 let currentRow = 10
+let currentPegRow = 10
 const allColors = ['blue', 'red', 'orange', 'yellow', 'pink', 'green']
 
 
@@ -55,6 +62,8 @@ const computerColorCode = [
     allColors[Math.floor(Math.random() * 6)],
     allColors[Math.floor(Math.random() * 6)],
 ]
+
+console.log(computerColorCode)
 
 
 // * Changing selected colour Box  // bear notes
@@ -71,8 +80,8 @@ colorPanel.forEach(btn => {
     btn.addEventListener('click', ChangeColor)
 })
 
-// * Checking if I can apply Colour to row 
 
+// * Checking if I can apply Colour to row and storing button colour in array 
 
 boardButtons.forEach(btn => {
     btn.addEventListener('click', function applyButtonColor(event) {
@@ -80,6 +89,10 @@ boardButtons.forEach(btn => {
         if (Number(btn.dataset.row) === currentRow) {
             const buttonColor = event.target
             buttonColor.classList.add(currentColor)
+
+            currentRowColors[btn.dataset.index] = currentColor
+
+            console.log(currentRowColors)
         }
     })
 })
@@ -88,9 +101,40 @@ boardButtons.forEach(btn => {
 
 // * Row change, peg display and code comparrison
 
+function submitFunctions() {
 
-function ChangeRow() {
+    if (computerColorCode[0] === currentRowColors[0] &&
+        computerColorCode[1] === currentRowColors[1] &&
+        computerColorCode[2] === currentRowColors[2] &&
+        computerColorCode[3] === currentRowColors[3]
+    ) {
+        console.log('You won!')
+    }
+
+    else if (computerColorCode[0] === currentRowColors[0] ||
+        computerColorCode[1] === currentRowColors[1] ||
+        computerColorCode[2] === currentRowColors[2] ||
+        computerColorCode[3] === currentRowColors[3] &&
+        dataset.pegRow === currentPegRow
+    ) {
+        dataset.pegRow.classList.add('red')
+    }
+
+    else if (computerColorCode.includes(currentRowColors[0]) ||
+            computerColorCode.includes(currentRowColors[1]) ||
+            computerColorCode.includes(currentRowColors[2]) ||
+            computerColorCode.includes(currentRowColors[3]) &&
+            dataset.pegRow === currentPegRow
+    ) {
+        dataset.pegRow.classList.add('white')
+    }
+
+    else {
+        console.log('no')
+    }
+    // currentPegRow -=1
     currentRow -= 1
 }
 
-submit.addEventListener('click', ChangeRow)
+
+submit.addEventListener('click', submitFunctions)

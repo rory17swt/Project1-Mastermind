@@ -5,114 +5,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <img src="MasterMind Logo.jpeg" id="logo"></img>
     <link rel="stylesheet" href="styles/main.css"></link>
     <script defer src="scripts/app.js"></script>
 </head>
 
 <body>
-    <h1 class="text" id="title">Mastermind</h1>
     <main class="content">
         <div class="main-board">
-            <button class="board-button" data-row="1" id="b1"></button>
-            <button class="board-button" data-row="1" id="b2"></button>
-            <button class="board-button" data-row="1" id="b3"></button>
-            <button class="board-button" data-row="1" id="b4"></button>
+            <button class="board-button" data-index="0" data-row="1" id="b1"></button>
+            <button class="board-button" data-index="1" data-row="1" id="b2"></button>
+            <button class="board-button" data-index="2" data-row="1" id="b3"></button>
+            <button class="board-button" data-index="3" data-row="1" id="b4"></button>
 
-            <button class="board-button" data-row="2" id="b5"></button>
-            <button class="board-button" data-row="2" id="b6"></button>
-            <button class="board-button" data-row="2" id="b7"></button>
-            <button class="board-button" data-row="2" id="b8"></button>
+            <button class="board-button" data-index="0" data-row="2" id="b5"></button>
+            <button class="board-button" data-index="1" data-row="2" id="b6"></button>
+            <button class="board-button" data-index="2" data-row="2" id="b7"></button>
+            <button class="board-button" data-index="3" data-row="2" id="b8"></button>
 
-            <button class="board-button" data-row="3" id="b9"></button>
-            <button class="board-button" data-row="3" id="b10"></button>
-            <button class="board-button" data-row="3" id="b11"></button>
-            <button class="board-button" data-row="3" id="b12"></button>
+            <button class="board-button" data-index="0" data-row="3" id="b9"></button>
+            <button class="board-button" data-index="1" data-row="3" id="b10"></button>
+            <button class="board-button" data-index="2" data-row="3" id="b11"></button>
+            <button class="board-button" data-index="3" data-row="3" id="b12"></button>
 
-            <button class="board-button" data-row="4" id="b13"></button>
-            <button class="board-button" data-row="4" id="b14"></button>
-            <button class="board-button" data-row="4" id="b15"></button>
-            <button class="board-button" data-row="4" id="b16"></button>
+            <button class="board-button" data-index="0" data-row="4" id="b13"></button>
+            <button class="board-button" data-index="1" data-row="4" id="b14"></button>
+            <button class="board-button" data-index="2" data-row="4" id="b15"></button>
+            <button class="board-button" data-index="3" data-row="4" id="b16"></button>
 
-            <button class="board-button" data-row="5" id="b17"></button>
-            <button class="board-button" data-row="5" id="b18"></button>
-            <button class="board-button" data-row="5" id="b19"></button>
-            <button class="board-button" data-row="5" id="b20"></button>
+            <button class="board-button" data-index="0" data-row="5" id="b17"></button>
+            <button class="board-button" data-index="1" data-row="5" id="b18"></button>
+            <button class="board-button" data-index="2" data-row="5" id="b19"></button>
+            <button class="board-button" data-index="3" data-row="5" id="b20"></button>
 
-            <button class="board-button" data-row="6" id="b21"></button>
-            <button class="board-button" data-row="6" id="b22"></button>
-            <button class="board-button" data-row="6" id="b23"></button>
-            <button class="board-button" data-row="6" id="b24"></button>
+            <button class="board-button" data-index="0" data-row="6" id="b21"></button>
+            <button class="board-button" data-index="1" data-row="6" id="b22"></button>
+            <button class="board-button" data-index="2" data-row="6" id="b23"></button>
+            <button class="board-button" data-index="3" data-row="6" id="b24"></button>
 
-            <button class="board-button" data-row="7" id="b25"></button>
-            <button class="board-button" data-row="7" id="b26"></button>
-            <button class="board-button" data-row="7" id="b27"></button>
-            <button class="board-button" data-row="7" id="b28"></button>
+            <button class="board-button" data-index="0" data-row="7" id="b25"></button>
+            <button class="board-button" data-index="1" data-row="7" id="b26"></button>
+            <button class="board-button" data-index="2" data-row="7" id="b27"></button>
+            <button class="board-button" data-index="3" data-row="7" id="b28"></button>
 
-            <button class="board-button" data-row="8" id="b29"></button>
-            <button class="board-button" data-row="8" id="b30"></button>
-            <button class="board-button" data-row="8" id="b31"></button>
-            <button class="board-button" data-row="8" id="b32"></button>
+            <button class="board-button" data-index="0" data-row="8" id="b29"></button>
+            <button class="board-button" data-index="1" data-row="8" id="b30"></button>
+            <button class="board-button" data-index="2" data-row="8" id="b31"></button>
+            <button class="board-button" data-index="3" data-row="8" id="b32"></button>
 
-            <button class="board-button" data-row="9" id="b33"></button>
-            <button class="board-button" data-row="9" id="b34"></button>
-            <button class="board-button" data-row="9" id="b35"></button>
-            <button class="board-button" data-row="9" id="b36"></button>
+            <button class="board-button" data-index="0" data-row="9" id="b33"></button>
+            <button class="board-button" data-index="1" data-row="9" id="b34"></button>
+            <button class="board-button" data-index="2" data-row="9" id="b35"></button>
+            <button class="board-button" data-index="3" data-row="9" id="b36"></button>
 
-            <button class="board-button" data-row="10" id="b37"></button>
-            <button class="board-button" data-row="10" id="b38"></button>
-            <button class="board-button" data-row="10" id="b39"></button>
-            <button class="board-button" data-row="10" id="b40"></button>
+            <button class="board-button" data-index="0" data-row="10" id="b37"></button>
+            <button class="board-button" data-index="1" data-row="10" id="b38"></button>
+            <button class="board-button" data-index="2" data-row="10" id="b39"></button>
+            <button class="board-button" data-index="3" data-row="10" id="b40"></button>
         </div>
         <div class="peg-box">
-            <div class="pegs" id="p1"></div>
-            <div class="pegs" id="p2"></div>
-            <div class="pegs" id="p3"></div>
-            <div class="pegs" id="p4"></div>
+            <div class="pegs" data-pegRow="1" id="p1"></div>
+            <div class="pegs" data-pegRow="1" id="p2"></div>
+            <div class="pegs" data-pegRow="1" id="p3"></div>
+            <div class="pegs" data-pegRow="1" id="p4"></div>
 
-            <div class="pegs" id="p5"></div>
-            <div class="pegs" id="p6"></div>
-            <div class="pegs" id="p7"></div>
-            <div class="pegs" id="p8"></div>
+            <div class="pegs" data-pegRow="2" id="p5"></div>
+            <div class="pegs" data-pegRow="2" id="p6"></div>
+            <div class="pegs" data-pegRow="2" id="p7"></div>
+            <div class="pegs" data-pegRow="2" id="p8"></div>
 
-            <div class="pegs" id="p9"></div>
-            <div class="pegs" id="p10"></div>
-            <div class="pegs" id="p11"></div>
-            <div class="pegs" id="p12"></div>
+            <div class="pegs" data-pegRow="3" id="p9"></div>
+            <div class="pegs" data-pegRow="3" id="p10"></div>
+            <div class="pegs" data-pegRow="3" id="p11"></div>
+            <div class="pegs" data-pegRow="3" id="p12"></div>
 
-            <div class="pegs" id="p13"></div>
-            <div class="pegs" id="p14"></div>
-            <div class="pegs" id="p15"></div>
-            <div class="pegs" id="p16"></div>
+            <div class="pegs" data-pegRow="4" id="p13"></div>
+            <div class="pegs" data-pegRow="4" id="p14"></div>
+            <div class="pegs" data-pegRow="4" id="p15"></div>
+            <div class="pegs" data-pegRow="4" id="p16"></div>
 
-            <div class="pegs" id="p17"></div>
-            <div class="pegs" id="p18"></div>
-            <div class="pegs" id="p19"></div>
-            <div class="pegs" id="p20"></div>
+            <div class="pegs" data-pegRow="5" id="p17"></div>
+            <div class="pegs" data-pegRow="5" id="p18"></div>
+            <div class="pegs" data-pegRow="5" id="p19"></div>
+            <div class="pegs" data-pegRow="5" id="p20"></div>
 
-            <div class="pegs" id="p21"></div>
-            <div class="pegs" id="p22"></div>
-            <div class="pegs" id="p23"></div>
-            <div class="pegs" id="p24"></div>
+            <div class="pegs" data-pegRow="6" id="p21"></div>
+            <div class="pegs" data-pegRow="6" id="p22"></div>
+            <div class="pegs" data-pegRow="6" id="p23"></div>
+            <div class="pegs" data-pegRow="6" id="p24"></div>
 
-            <div class="pegs" id="p25"></div>
-            <div class="pegs" id="p26"></div>
-            <div class="pegs" id="p27"></div>
-            <div class="pegs" id="p28"></div>
+            <div class="pegs" data-pegRow="7" id="p25"></div>
+            <div class="pegs" data-pegRow="7" id="p26"></div>
+            <div class="pegs" data-pegRow="7" id="p27"></div>
+            <div class="pegs" data-pegRow="7" id="p28"></div>
 
-            <div class="pegs" id="p29"></div>
-            <div class="pegs" id="p30"></div>
-            <div class="pegs" id="p31"></div>
-            <div class="pegs" id="p32"></div>
+            <div class="pegs" data-pegRow="8" id="p29"></div>
+            <div class="pegs" data-pegRow="8" id="p30"></div>
+            <div class="pegs" data-pegRow="8" id="p31"></div>
+            <div class="pegs" data-pegRow="8" id="p32"></div>
 
-            <div class="pegs" id="p33"></div>
-            <div class="pegs" id="p34"></div>
-            <div class="pegs" id="p35"></div>
-            <div class="pegs" id="p36"></div>
+            <div class="pegs" data-pegRow="9" id="p33"></div>
+            <div class="pegs" data-pegRow="9" id="p34"></div>
+            <div class="pegs" data-pegRow="9" id="p35"></div>
+            <div class="pegs" data-pegRow="9" id="p36"></div>
 
-            <div class="pegs" id="p37"></div>
-            <div class="pegs" id="p38"></div>
-            <div class="pegs" id="p39"></div>
-            <div class="pegs" id="p40"></div>
+            <div class="pegs" data-pegRow="10" id="p37"></div>
+            <div class="pegs" data-pegRow="10" id="p38"></div>
+            <div class="pegs" data-pegRow="10" id="p39"></div>
+            <div class="pegs" data-pegRow="10" id="p40"></div>
         </div>
     </div>
     <div>
@@ -132,7 +135,21 @@
                 <button class="color-button " id="green"></button>
             </div>
             <div id="current-color"></div>
-            <div class="text" id="submit">Submit</div>
+            <div id="submit"> Submit </div>
+            <div id="rules">
+                <h1 class="text" id="rules-title"> Rules </h1>
+                <p class="text" id="rules-text">The computer selects four colours out of the six displayed on the colour board and creates a code.
+                    The player then needs to guess the code by selecting a colour from the colour board and placing it in one of the board holes.
+                    Once the player is happy with their colour selection, press the submit button to submit your guess.
+                    The computer will then give you some clues:
+                    A red peg indicates the correct colour in the correct position.
+                    A white peg indicates a correct colour in the wrong position.
+                    The player will use this feedback to make subsequent guesses, attempting to deduce the correct colours and their positions.
+                    The game continues until the player guesses the correct code or runs out of attempts (10 rows). 
+                    The player wins if they guess the correct code within 10 attempts.
+                    The computer wins if the player fails to guess the code within 10 attempts. 
+                </p>
+            </div>
         </div>
     </main>
 </body>

@@ -1,7 +1,7 @@
 
-#title {
-    margin-left: 90px;
-    font-size: 3rem;
+#logo {
+    margin: 10px;
+    margin-left: 150px;
 }
 
 .main-board {
@@ -44,7 +44,7 @@
 }
 
 .pegs {
-    background-color: white;
+    background-color:bisque ;
     border-radius: 50%;
     width: 25px;
     height: 20px;
@@ -67,7 +67,8 @@
     margin-left: 2.5px;
     height: 95px;
     width: 95px;
-}
+}    
+
 .white {
     background-color: white;
 }
@@ -173,4 +174,26 @@
 #submit:hover {
     cursor: pointer;
     opacity: 1;
+}
+
+.text {
+    font-family: "Bitter", "system-ui";
+}
+
+#rules-title {
+    position: relative;
+    bottom: 500px;
+    margin-left: 1280px;
+    text-decoration: underline;
+    font-size: 40px;
+    
+}
+
+#rules-text {
+    position: relative;
+    width: 700px;
+    bottom: 500px;
+    margin-left: 1000px;
+    font-size: 20px;
+    line-height: 30px;
 }
