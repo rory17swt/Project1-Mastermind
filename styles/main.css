@@ -44,7 +44,7 @@
 }
 
 .pegs {
-    background-color:bisque ;
+    background-color: black ;
     border-radius: 50%;
     width: 25px;
     height: 20px;
@@ -69,6 +69,9 @@
     width: 95px;
 }    
 
+.black {
+    background-color: black;
+}
 .white {
     background-color: white;
 }
@@ -176,14 +179,51 @@
     opacity: 1;
 }
 
+#you-won {
+    visibility: hidden;
+    margin-left: 475px;
+    margin-top: 50px;
+    font-size: 40px;
+    color: red;
+    text-decoration: underline;
+}
+
+#you-lost {
+    visibility: hidden;
+    margin-left: 475px;
+    position: relative;
+    font-size: 40px;
+    color: red;
+    text-decoration: underline;
+}
+
+#play-again {
+    visibility: hidden;
+    width: 200px;
+    height: 50px;
+    border: 5px solid black;
+    margin-left: 450px;
+    margin-top: 10px;
+    background-color: red;
+    opacity: .7;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+#play-again:hover {
+    cursor: pointer; 
+    opacity: 1;
+}
+
 .text {
     font-family: "Bitter", "system-ui";
 }
 
 #rules-title {
     position: relative;
-    bottom: 500px;
-    margin-left: 1280px;
+    bottom: 730px;
+    margin-left: 1320px;
     text-decoration: underline;
     font-size: 40px;
     
@@ -191,9 +231,49 @@
 
 #rules-text {
     position: relative;
-    width: 700px;
-    bottom: 500px;
+    width: 800px;
+    bottom: 730px;
     margin-left: 1000px;
     font-size: 20px;
     line-height: 30px;
+}
+
+
+#p1, #p2 {
+    margin-top: 2px;
+}
+#p5, #p6 {
+    margin-top: 20px;
+    margin-bottom: -15px;
+}
+#p9, #p10 {
+    margin-top: px;
+    margin-bottom: -15px;
+}
+#p13, #p14 {
+    margin-top: px;
+    margin-bottom: -15px;
+} 
+#p17, #p18 {
+    margin-top: 5px;
+    margin-bottom: -12px;
+}
+#p21, #p22 {
+    margin-top: -px;
+    margin-bottom: -13px;
+}
+#p25, #p26 {
+    margin-top: px;
+    margin-bottom: -15px;
+}
+#p29, #p30 {
+    margin-top: px;
+    margin-bottom: -15px;
+}
+#p33, #p34 {
+    margin-bottom: -13px;
+}
+#p39, #p40 {
+    margin-top: -15px;
+    margin-bottom: 15px;
 }
