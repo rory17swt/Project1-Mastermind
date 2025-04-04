@@ -191,6 +191,7 @@
 #you-lost {
     visibility: hidden;
     margin-left: 475px;
+    margin-top: -50px;
     position: relative;
     font-size: 40px;
     color: red;

@@ -1,11 +1,12 @@
-// * When I load the page I should know what I'm playing
-
 
 const allPegs = document.querySelectorAll('.pegs')
 const submit = document.querySelector('#submit')
 const boardButtons = document.querySelectorAll('.board-button')
 const currentColorBox = document.querySelector('#current-color')
 const colorPanel = document.querySelectorAll('.color-button')
+const youWon = document.getElementById('you-won')
+const playAgain = document.getElementById('play-again')
+const youLoose = document.getElementById('you-lost')
 
 let currentRowColors = [
     '',
@@ -16,7 +17,7 @@ let currentRowColors = [
 
 let pegArray = [] // filled with red or white
 
-const matches = [
+let matches = [
     '',
     '',
     '',
@@ -25,7 +26,6 @@ const matches = [
 
 let currentColor = ''
 let currentRow = 10
-let currentPegRow = 10
 const allColors = ['blue', 'red', 'orange', 'yellow', 'pink', 'green']
 
 
@@ -41,7 +41,7 @@ let computerColorCode = [
 console.log(computerColorCode)
 
 
-// * Changing selected colour Box  // bear notes
+// * Changing selected colour Box
 
 function ChangeColor(event) {
 
@@ -67,146 +67,83 @@ boardButtons.forEach(btn => {
 
             currentRowColors[btn.dataset.index] = currentColor
 
-            console.log(currentRowColors)
+
         }
     })
 })
 
 
-// * Check matches
+// * Check matches for win, and peg display. Change row & reset arrays
 
-// * Check[0]
+function checkMatches() {
+    // Checking full matches
+    if (!currentRowColors.includes('')) {
+        for (let i = 0; i < currentRowColors.length; i++) {
+            if (currentRowColors[i] === computerColorCode[i]) {
+                matches[i] = currentRowColors[i]
+                pegArray.push('red')
+            }
+        }
+        if (pegArray.length === 4) {
+            youWon.style.visibility = "visible"
+            playAgain.style.visibility = "visible"
+            submit.style.visibility = "hidden"
+        }
+        // Check partial matches
+        for (let i = 0; i < currentRowColors.length; i++) {
+            if (currentRowColors[i] !== computerColorCode[i]) {
+                for (let idx = 0; idx < computerColorCode.length; idx++) {
+                    if (matches[idx] === "" && currentRowColors[i] === computerColorCode[idx]) {
+                        matches[idx] = currentRowColors[i]
+                        pegArray.push('white')
+                        break
+                    }
+                }
+            }
+        }
+        // place pegs
+        const pegRow = document.querySelectorAll(`[data-pegRow="${currentRow}"`)
 
-function checkMatches0() {
+        // Loop peg placement
+        for (let i = 0; i < pegArray.length; i++) {
+            pegRow[i].classList.add(pegArray[i])
+        }
 
-    if (currentRowColors[0] === computerColorCode[0]) {
-        matches[0] = currentRowColors[0];
-        console.log(matches)
-    }
-    else if (!matches[0]) {
-        currentRowColors[0] === computerColorCode[0] ||
-            currentRowColors[0] === computerColorCode[1] ||
-            currentRowColors[0] === computerColorCode[2] ||
-            currentRowColors[0] === computerColorCode[3],
-            console.log('display white')
-    }
-}
-
-submit.addEventListener('click', checkMatches0)
-
-// * Check[1]
-
-function checkMatches1() {
-
-    if (currentRowColors[1] === computerColorCode[1]) {
-        matches[1] = currentRowColors[1],
-            console.log(matches)
-    }
-    else if (!matches[1]) {
-        currentRowColors[1] === computerColorCode[0] ||
-            currentRowColors[1] === computerColorCode[1] ||
-            currentRowColors[1] === computerColorCode[2] ||
-            currentRowColors[1] === computerColorCode[3],
-            console.log('display white')
-    }
-}
-
-submit.addEventListener('click', checkMatches1)
-
-// * Check[2]
-
-function checkMatches2() {
-
-    if (currentRowColors[2] === computerColorCode[2]) {
-        matches[2] = currentRowColors[2],
-            console.log(matches)
-    }
-    else if (!matches[2]) {
-        currentRowColors[2] === computerColorCode[0] ||
-            currentRowColors[2] === computerColorCode[1] ||
-            currentRowColors[2] === computerColorCode[2] ||
-            currentRowColors[2] === computerColorCode[3],
-            console.log('display white')
+        // Reset
+        currentRowColors = ['', '', '', '']
+        pegArray = []
+        matches = ['', '', '', '']
+        currentRow -= 1
     }
 }
 
-submit.addEventListener('click', checkMatches2)
+submit.addEventListener('click', checkMatches)
 
-// * Check[3]
 
-function checkMatches3() {
+// * Check if lost
 
-    if (currentRowColors[3] === computerColorCode[3]) {
-        matches[3] = currentRowColors[3],
-            console.log(matches)
-    }
-    else if (!matches[3]) {
-        currentRowColors[3] === computerColorCode[0] ||
-            currentRowColors[3] === computerColorCode[1] ||
-            currentRowColors[3] === computerColorCode[2] ||
-            currentRowColors[3] === computerColorCode[3],
-            console.log('display white')
-    }
-}
+function checkloose() {
 
-submit.addEventListener('click', checkMatches3)
+    // if (pegArray.length === 4) {
+    //     youWon.style.visibility = "visible"
+    //     playAgain.style.visibility = "visible"
+    //     submit.style.visibility = "hidden"
 
-// * Check win or loose
-
-const youWon = document.getElementById('you-won')
-const playAgain = document.getElementById('play-again')
-const youLoose = document.getElementById('you-lost')
-
-function checkWin() {
-    if (matches[0] === computerColorCode[0] &&
-        matches[1] === computerColorCode[1] &&
-        matches[2] === computerColorCode[2] &&
-        matches[3] === computerColorCode[3]) {
-        youWon.style.visibility = "visible"
-        playAgain.style.visibility = "visible"
-        submit.style.visibility = "hidden"
-    }
-    else if (currentRow === 1) {
+    if (currentRow === 0) {
         youLoose.style.visibility = "visible"
         playAgain.style.visibility = "visible"
         submit.style.visibility = "hidden"
     }
 }
 
-submit.addEventListener('click', checkWin)
+submit.addEventListener('click', checkloose)
 
-// * Peg index moover
-
-const currentPegEl = document.querySelectorAll(`[dataset-pegRows]`)
-
-function movePegIndex() {
-
-if (Number(currentPegEl) === currentPegRow) {
-
-    for (let i = 0; i < pegArray.length; i++) {
-        currentPegEl[0].classList.add(pegArray[i])
-    }
-}
-}
-
-submit.addEventListener('click', movePegIndex)
-
-
-// * Change row
-
-function changeRow() {
-    currentRow -= 1
-    currentPegRow -= 1
-}
-
-submit.addEventListener('click', changeRow)
 
 // * Play Again
 
 function clickAgain() {
 
     currentRow = 10
-    currentPegRow = 10
 
     while (computerColorCode.length > 0) {
         computerColorCode.pop()
@@ -219,8 +156,12 @@ function clickAgain() {
     ]
     console.log(computerColorCode)
 
-    // boardButtons.classList.add('.white')
-    // allPegs.classList.add('.black')
+    boardButtons.forEach(btn => {
+        btn.className = "board-button"
+    })
+    allPegs.forEach(peg => {
+        peg.className = "pegs"
+    })
 
     submit.style.visibility = "visible"
     youWon.style.visibility = "hidden"
